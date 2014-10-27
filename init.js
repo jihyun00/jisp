@@ -1,4 +1,5 @@
 //devide lisp
+//TODO: function init complete
 function init(lisp) {
     var re = /./g;
     var list = lisp.split(re);
@@ -12,7 +13,7 @@ function init(lisp) {
 function define(list) {
     var arguments[1] = arguments[2];
 
-    return list[1];
+    return arguments[1];
 }
 
 //calculation
