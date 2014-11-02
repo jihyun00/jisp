@@ -1,7 +1,7 @@
 var init = require('./init.js');
 
 exports['init'] = function(test){
-    test.deepEqual(init.tokenizer('(+ 2 3)'), ['(', '+', '22', '3', ')']);
+    test.deepEqual(init.tokenizer('(+ 15525 32342)'), ['(', '+', '15525', '32342', ')']);
     test.done();
 };
 /*

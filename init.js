@@ -1,5 +1,5 @@
 var expression = {
-    number : /([0-9])\w+/,
+    number : /[0-9]/,
     symbol : /''/,
     brace : /''/,
     whitespace : /\s/
@@ -7,11 +7,27 @@ var expression = {
 
 exports.tokenizer = function(lisp) {
     var res = [];
+    var a = '';
 
     for(var i in lisp) {
         if(lisp[i].match(expression.whitespace)) {
+            if(a !== '') {
+                res.push(a);
+                a = '';
+            } 
             continue;
+
+        } else if(lisp[i].match(expression.number)) {
+            a += lisp[i];
+            continue;
+
+        } else if(lisp[i] === ')') {
+            if(a !== '') {
+                res.push(a);
+                a = '';
+            }
         }
+
         res.push(lisp[i]);
     }
     
@@ -60,3 +76,5 @@ exports.square = function(list) {
 
     return res;
 };
+
+//TODO: 조건문, 정의, 토크나이저 완성
