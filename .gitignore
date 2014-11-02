@@ -1,3 +1,4 @@
 node_modules/
 nodeunit/
 npm-debug.log
+*.swp
