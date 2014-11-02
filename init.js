@@ -21,13 +21,16 @@ exports.tokenizer = function(lisp) {
 //define
 /*
 exports.define = function(list) {
-    var arguments[1] = arguments[2];
+    var res = list[1];
 
-    return arguments[1];
+    return res;
 };
 */
 //calculation
 exports.sum = function(list) {
+    list[2] = Number(list[2]);
+    list[3] = Number(list[3]);
+
     var res = list[2] + list[3];
 
     return res;

@@ -4,9 +4,14 @@ exports['init'] = function(test){
     test.deepEqual(init.tokenizer('(+ 2 3)'), ['(', '+', '22', '3', ')']);
     test.done();
 };
-
+/*
+exports['define'] = function(test) {
+    test.equal(init.define(['(', 'define', 'a', '5', ')']), 5);
+    test.done();
+};
+*/
 exports['sum'] = function(test) {
-    test.equal(init.sum(['(', '+', 2, 3, ')']), 5);
+    test.equal(init.sum(['(', '+', '2', '3', ')']), 5);
     test.done();
 };
 
