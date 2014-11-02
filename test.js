@@ -1,7 +1,7 @@
 var init = require('./init.js');
 
 exports['init'] = function(test){
-    test.equal(init.tokenizer('()'), ['(', ')']);
+    test.deepEqual(init.tokenizer('(+ 2 3)'), ['(', '+', '2', '3', ')']);
     test.done();
 };
 

@@ -1,11 +1,21 @@
-//devide lisp
-//progressing
+var expression = {
+    number : /'([0-9])\w+'/,
+    symbol : /''/,
+    brace : /''/,
+    whitespace : /\s/
+};
+
 exports.tokenizer = function(lisp) {
     var res = [];
-    for(var i = 0; i < lisp.length; i++) {
+
+    for(var i in lisp) {
+        if(lisp[i].match(expression.whitespace)) {
+            continue;
+        }
+
         res.push(lisp[i]);
     }
-
+    
     return res;
 };
 
