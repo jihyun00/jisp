@@ -1,48 +1,49 @@
 //devide lisp
-//TODO: function init complete
-function init(lisp) {
-    var re = /./g;
-    var list = lisp.split(re);
+//progressing
+exports.tokenizer = function(lisp) {
+    var res = [];
+    for(var i = 0; i < lisp.length; i++) {
+        res.push(lisp[i]);
+    }
 
-    //정규식 (+ 2 3) 
-
-    return ;
-}
+    return res;
+};
 
 //define
-function define(list) {
+/*
+exports.define = function(list) {
     var arguments[1] = arguments[2];
 
     return arguments[1];
-}
+};
 
 //calculation
-function sum(list) {
+exports.sum = function(list) {
     var res = arguments[1] + arguments[2];
 
     return res;
-}
+};
 
-function sub(list) {
+exports.sub = function(list) {
     var res = arguments[1] - arguments[2];
 
     return res;
-}
+};
 
-function multiply(list) {
+exports.multiply = function(list) {
     var res = arguments[1] * arguments[2];
 
-    return res;
-}
+    return res; 
+};
 
-function divide(list) {
+exports.divide = function(list) {
     var res = arguments[1] / arguments[2];
 
     return res;
-}
+};
 
-function square(list) {
+exports.square = function(list) {
     var res = arguments[1] * arguments[1];
 
     return res;
-}
+};*/
