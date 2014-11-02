@@ -2,7 +2,8 @@ var expression = {
     number : /[0-9]/,
     symbol : /''/,
     brace : /''/,
-    whitespace : /\s/
+    whitespace : /\s/,
+    point: /[.]/
 };
 
 exports.tokenizer = function(lisp) {
@@ -26,6 +27,11 @@ exports.tokenizer = function(lisp) {
                 res.push(a);
                 a = '';
             }
+
+        } else if(lisp[i].match(expression.point)) {
+            a += lisp[i];
+            continue;
+
         }
 
         res.push(lisp[i]);
